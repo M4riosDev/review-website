@@ -9,7 +9,7 @@ $result = $db->query("SELECT * FROM reviews ORDER BY created DESC");
 
 <?php foreach($result as $row): ?>
 <div class="review">
-    <b><?= $row['name'] ?></b> (<?= $row['email'] ?>)<br>
+    <b><?= $row['name'] ?></b>
     Stars: <?= $row['stars'] ?><br>
     <p><?= $row['comment'] ?></p>
     <?php if ($row['photo']): ?>
