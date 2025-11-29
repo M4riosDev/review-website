@@ -14,11 +14,13 @@ $rows = $db->query("SELECT * FROM reviews ORDER BY id DESC");
 
 <?php foreach($rows as $r): ?>
 <div class="review">
-    <b><?= $r['name'] ?></b> (<?= $r['email'] ?>)<br>
-    Stars: <?= $r['stars'] ?><br>
-    <p><?= $r['comment'] ?></p>
+    <b><?= htmlspecialchars($r['name']) ?></b> (<?= htmlspecialchars($r['email']) ?>)<br>
+    Order NO: <?= htmlspecialchars($r['order_no']) ?><br>
+    Stars: <?= htmlspecialchars($r['stars']) ?><br>
+    <p><?= htmlspecialchars($r['comment']) ?></p>
+
     <?php if ($r['photo']): ?>
-        <img src="<?= $r['photo'] ?>">
+        <img src="<?= htmlspecialchars($r['photo']) ?>">
     <?php endif; ?>
     <br>
     <a href="delete.php?id=<?= $r['id'] ?>">Delete</a>

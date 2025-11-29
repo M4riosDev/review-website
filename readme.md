@@ -1,3 +1,32 @@
+# If you are using Apache remove this block
+<?php
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+$allowed = [
+    '/',
+    '/index.php',
+    '/admin.php',
+    '/upload.php',
+    '/view.php'
+];
+
+if (!in_array($path, $allowed)) {
+    http_response_code(404);
+    include __DIR__ . '/404.php';
+    exit;
+}
+?>
+This block is only required on Nginx.
+
+For Apache use a .htaccess file:
+
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+
+
+
+
 # ⭐ Review Management Web App
 ![PHP](https://img.shields.io/badge/Code-PHP-777BB4?logo=php&logoColor=white)
 ![HTML](https://img.shields.io/badge/Frontend-HTML5-E34F26?logo=html5&logoColor=white)
@@ -47,8 +76,6 @@ style.css - Page styling
 
    `http://localhost/project-folder/`
 
-4. (Optional) Setup a database if you want to store reviews permanently.
-
 ---
 
 ## Admin Login
@@ -82,3 +109,10 @@ Good for school projects or learning PHP.
 
 ## License
 MIT License. Free to use and modify.
+
+## Photos
+![Index](./Img/3.png)
+![Reviews](./Img/1.png)
+![Admin](./Img/2.png)
+
+

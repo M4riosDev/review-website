@@ -1,101 +1,92 @@
-<?php http_response_code(404); ?>
+<?php
+http_response_code(404);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Willowen 404</title>
-  <link rel="icon" href="./img/logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/404.css">
-  <style>
- * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <title>Page Not Found – 404</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
     body {
-      background-color: #000000;
-      color: #ffffff;
-      font-family: "Inter", sans-serif;
-      height: 100vh;
+      background-color: #f7f5f2;
+      color: #2c2c2c;
+      font-family: "Poppins", sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      height: 100vh;
       padding: 2rem;
-      overflow: hidden;
     }
 
-    .candle {
+    .ghost {
+      width: 80px;
+      height: 80px;
+      background: #2c2c2c;
+      border-radius: 50%;
       position: relative;
-      width: 16px;
-      height: 40px;
-      background: #e5e2df;
-      border-radius: 4px;
-      margin-bottom: 1.5rem;
-      box-shadow: inset 0 -3px 0 #ccc;
+      animation: float 3s infinite ease-in-out;
+      margin-bottom: 2rem;
     }
 
-    .flame {
+    .ghost::after,
+    .ghost::before {
+      content: "";
       position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 12px;
-      height: 18px;
-      background: radial-gradient(circle at 50% 30%, #ffb347 0%, #ffcc33 60%, transparent 100%);
-      border-radius: 50% 50% 50% 50%;
-      animation: flicker 1.4s infinite ease-in-out alternate;
-      transform-origin: center;
+      width: 30px;
+      height: 30px;
+      background: #2c2c2c;
+      border-radius: 50%;
+      bottom: -15px;
     }
 
-    @keyframes flicker {
-      0% { transform: translateX(-50%) scale(1) rotate(0deg); opacity: 1; }
-      50% { transform: translateX(-50%) scale(1.1) rotate(2deg); opacity: 0.8; }
-      100% { transform: translateX(-50%) scale(0.9) rotate(-2deg); opacity: 1; }
+    .ghost::before { left: -15px; }
+    .ghost::after { right: -15px; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
 
     h1 {
-      font-size: 4rem;
-      letter-spacing: 1px;
-      margin-bottom: 0.25rem;
+      font-size: 3rem;
+      margin-bottom: .5rem;
     }
 
     p {
+      max-width: 380px;
       font-size: 1rem;
       color: #555;
       margin-bottom: 2rem;
-      max-width: 420px;
-      line-height: 1.5;
     }
 
     a {
       text-decoration: none;
       color: #fff;
       background-color: #2c2c2c;
-      padding: 0.75rem 1.5rem;
+      padding: .75rem 1.5rem;
       border-radius: 25px;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
 
     a:hover {
       background-color: #444;
-      transform: translateY(-2px);
     }
   </style>
 </head>
 <body>
-  <div class="candle">
-    <div class="flame"></div>
-  </div>
+
+  <div class="ghost"></div>
   <h1>404</h1>
-  <p>
-    Looks like we lost the wick 🔥  
-    The page you’re searching for melted away...  
-  </p>
-  <a href="/">Back to safety</a>
+  <p>The page you're looking for doesn’t exist or was moved.</p>
+  <a href="/">Back to Home</a>
+
 </body>
 </html>

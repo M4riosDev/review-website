@@ -1,27 +1,9 @@
-<?php
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
-$allowed = [
-    '/',
-    '/index.php',
-    '/admin.php',
-    '/upload.php',
-    '/view.php'
-];
-
-if (!in_array($path, $allowed)) {
-    http_response_code(404);
-    include __DIR__ . '/404.php';
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Reviews</title>
+    <title>Reviews Website </title>
     <link rel="stylesheet" href="style.css">
 </head>
 
