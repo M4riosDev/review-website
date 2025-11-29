@@ -1,4 +1,8 @@
 # ⭐ Review Management Web App
+![PHP](https://img.shields.io/badge/Code-PHP-777BB4?logo=php&logoColor=white)
+![HTML](https://img.shields.io/badge/Frontend-HTML5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/Style-CSS3-1572B6?logo=css3&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 This is a simple PHP web app where users can submit reviews with a rating, comment and optional image. The project also includes an admin panel to manage and delete reviews.
 
