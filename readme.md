@@ -21,11 +21,10 @@ if (!in_array($path, $allowed)) {
 ```
 This block is only required on Nginx.
 
-For Apache use a .htaccess file:
+For Apache create a .htaccess file and add:
 
-nginx
-Copy code
 ErrorDocument 404 /404.php
+
 ErrorDocument 500 /500.php
 
 
