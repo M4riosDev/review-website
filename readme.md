@@ -1,4 +1,6 @@
-# If you are using Apache remove this block
+# If you are using Apache remove this block from the index.php
+
+```php
 <?php
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -16,10 +18,13 @@ if (!in_array($path, $allowed)) {
     exit;
 }
 ?>
+```
 This block is only required on Nginx.
 
 For Apache use a .htaccess file:
 
+nginx
+Copy code
 ErrorDocument 404 /404.php
 ErrorDocument 500 /500.php
 
